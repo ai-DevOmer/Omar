@@ -67,21 +67,21 @@ TIERS: Dict[str, Tier] = {
         monthly_credits=Decimal('0.00'),
         display_name='Basic',
         can_purchase_credits=False,
-        models=['haiku'],
-        project_limit=20,  # 2x thread_limit (safety buffer for orphan projects)
-        thread_limit=10,
-        concurrent_runs=1,
-        custom_workers_limit=0,
-        scheduled_triggers_limit=0,
-        app_triggers_limit=0,
+        models=['all'],  # All models available
+        project_limit=UNLIMITED_PROJECT_LIMIT,  # Unlimited projects
+        thread_limit=UNLIMITED_THREAD_LIMIT,  # Unlimited threads
+        concurrent_runs=20,  # Increased concurrent runs
+        custom_workers_limit=100,
+        scheduled_triggers_limit=50,
+        app_triggers_limit=200,
         memory_config={
             'enabled': True,
-            'max_memories': 10,
-            'retrieval_limit': 2
+            'max_memories': 2000,
+            'retrieval_limit': 40
         },
         daily_credit_config={
             'enabled': True,
-            'amount': Decimal('1.00'),
+            'amount': Decimal('2.00'),  # 200 credits per day
             'refresh_interval_hours': 24
         },
         monthly_refill_enabled=False

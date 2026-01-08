@@ -452,6 +452,32 @@ async def get_account_state(
     
     for attempt in range(max_retries):
         try:
+            # Check and grant owner credits if needed
+            try:
+                from core.billing.owner_credits import check_and_grant_owner_credits
+                from core.billing import repo as billing_repo
+                
+                # Get user email
+                credit_account = await billing_repo.get_credit_account(account_id)
+                if credit_account:
+                    # Try to get email from basejump accounts
+                    from core.services.supabase import DBConnection
+                    db = DBConnection()
+                    client = await db.client
+                    account_result = await client.schema('basejump').from_('accounts').select('primary_owner_user_id').eq('id', account_id).execute()
+                    
+                    if account_result.data and len(account_result.data) > 0:
+                        user_id = account_result.data[0].get('primary_owner_user_id')
+                        if user_id:
+                            # Get user email from auth.users
+                            user_result = await client.schema('auth').from_('users').select('email').eq('id', user_id).execute()
+                            if user_result.data and len(user_result.data) > 0:
+                                email = user_result.data[0].get('email')
+                                if email:
+                                    await check_and_grant_owner_credits(account_id, email)
+            except Exception as owner_err:
+                logger.warning(f"[ACCOUNT_STATE] Owner credit check failed for {account_id}: {owner_err}")
+            
             # Ensure daily credits are refreshed if needed (non-blocking on failure)
             try:
                 await credit_service.check_and_refresh_daily_credits(account_id)
