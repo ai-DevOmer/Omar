@@ -1,4 +1,7 @@
 {
+  "buildCommand": "pnpm install && pnpm build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
   "rewrites": [
     {
       "source": "/api/:path*",
