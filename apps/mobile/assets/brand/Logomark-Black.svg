@@ -1,16 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <circle cx="100" cy="100" r="40" fill="black"/>
-  <text x="100" y="115" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">O</text>
-  <g stroke="black" stroke-width="4" fill="none">
-    <circle cx="100" cy="100" r="70"/>
-    <circle cx="100" cy="100" r="85"/>
-    <line x1="50" y1="60" x2="60" y2="50"/>
-    <line x1="150" y1="60" x2="140" y2="50"/>
-    <line x1="50" y1="140" x2="60" y2="150"/>
-    <line x1="150" y1="140" x2="140" y2="150"/>
-    <circle cx="50" cy="60" r="5" fill="black"/>
-    <circle cx="150" cy="60" r="5" fill="black"/>
-    <circle cx="50" cy="140" r="5" fill="black"/>
-    <circle cx="150" cy="140" r="5" fill="black"/>
-  </g>
+<svg width="120" height="20" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.1251 19.7812H23.3894C23.3894 15.5851 21.1784 11.9119 17.8719 9.89126C21.1784 7.8706 23.3893 4.19741 23.3893 0.00128174H20.125C20.125 3.97195 17.3159 7.29372 13.6233 8.07253V0.00128174H10.3594V8.07253C6.64936 7.30729 3.8576 3.98444 3.8576 0.00128174H0.593319C0.593319 4.19741 2.80427 7.8706 6.11078 9.89126C2.80424 11.9119 0.593246 15.5851 0.593246 19.7812H3.85753C3.85753 15.7981 6.64935 12.4752 10.3594 11.71V19.7849H13.6233V11.71C17.3333 12.4752 20.1251 15.7981 20.1251 19.7812Z" fill="black"/>
+<text x="28" y="16" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="black">OMAR AI</text>
 </svg>
