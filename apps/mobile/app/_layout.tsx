@@ -232,7 +232,7 @@ export default function RootLayout() {
         scheme: parsedUrl.scheme,
       });
 
-      // Handle custom scheme: kortix://auth/callback
+      // Handle custom scheme: omar-ai://auth/callback
       if (parsedUrl.hostname === 'auth' && parsedUrl.path === 'callback') {
         console.log('📧 Auth callback received, processing...');
 

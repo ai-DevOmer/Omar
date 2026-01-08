@@ -33,8 +33,8 @@ export type Agent = {
   current_version?: AgentVersion | null;
   metadata?: {
     template_name?: string;
-    kortix_template_id?: string;
-    is_kortix_team?: boolean;
+    omar-ai_template_id?: string;
+    is_omar-ai_team?: boolean;
     is_suna_default?: boolean;
     centrally_managed?: boolean;
     management_version?: string;

@@ -64,7 +64,7 @@ import { fileQueryKeys } from '@/hooks/files';
 import { useProjectRealtime } from '@/hooks/threads';
 import { handleGoogleSlidesUpload } from './tool-views/utils/presentation-utils';
 import { useTranslations } from 'next-intl';
-import { useKortixComputerStore, useSetIsSidePanelOpen } from '@/stores/kortix-computer-store';
+import { useOMAR AIComputerStore, useSetIsSidePanelOpen } from '@/stores/omar-ai-computer-store';
 import { useToolStreamStore } from '@/stores/tool-stream-store';
 import { useOptimisticFilesStore } from '@/stores/optimistic-files-store';
 import { useProcessStreamOperation } from '@/stores/spreadsheet-store';
@@ -275,9 +275,9 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
   }, [setIsSidePanelOpen, setAutoOpenedPanel]);
 
   // Use individual selectors to avoid subscribing to entire store (prevents unnecessary re-renders)
-  const openFileInComputer = useKortixComputerStore((state) => state.openFileInComputer);
-  const openFileBrowser = useKortixComputerStore((state) => state.openFileBrowser);
-  const resetKortixComputerStore = useKortixComputerStore((state) => state.reset);
+  const openFileInComputer = useOMAR AIComputerStore((state) => state.openFileInComputer);
+  const openFileBrowser = useOMAR AIComputerStore((state) => state.openFileBrowser);
+  const resetOMAR AIComputerStore = useOMAR AIComputerStore((state) => state.reset);
 
   const billingModal = useBillingModal();
   const threadBilling = useThreadBilling(
@@ -388,10 +388,10 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
       // This prevents the panel from flickering closed during the transition
       const isOptimisticThread = optimisticThreadIdRef.current === threadId;
       if (!isOptimisticThread) {
-        resetKortixComputerStore();
+        resetOMAR AIComputerStore();
       }
     }
-  }, [threadId, queryClient, isShared, resetKortixComputerStore]);
+  }, [threadId, queryClient, isShared, resetOMAR AIComputerStore]);
 
   useEffect(() => {
     if (!isNewThread || hasDataLoaded.current || !showOptimisticUI) return;
@@ -1126,7 +1126,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
   // SEO title update
   useEffect(() => {
     if (projectName) {
-      document.title = `${projectName} | Kortix`;
+      document.title = `${projectName} | OMAR AI`;
 
       const metaDescription = document.querySelector(
         'meta[name="description"]',
@@ -1134,13 +1134,13 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
       if (metaDescription) {
         metaDescription.setAttribute(
           'content',
-          `${projectName} - Interactive Worker conversation powered by Kortix`,
+          `${projectName} - Interactive Worker conversation powered by OMAR AI`,
         );
       }
 
       const ogTitle = document.querySelector('meta[property="og:title"]');
       if (ogTitle) {
-        ogTitle.setAttribute('content', `${projectName} | Kortix`);
+        ogTitle.setAttribute('content', `${projectName} | OMAR AI`);
       }
 
       const ogDescription = document.querySelector(

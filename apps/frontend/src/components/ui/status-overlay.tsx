@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle, AlertCircle } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useDeleteOperation } from '@/stores/delete-operation-store';
 
 export function StatusOverlay() {
@@ -12,7 +12,7 @@ export function StatusOverlay() {
     <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-background/90 backdrop-blur p-3 rounded-2xl shadow-lg border border-border">
       {state.operation === 'pending' && (
         <>
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
           <span className="text-sm">Processing...</span>
         </>
       )}

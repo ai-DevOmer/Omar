@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 
 interface WebSearchLoadingStateProps {
   queries: string[];
@@ -92,8 +92,8 @@ export function WebSearchLoadingState({
                     {query}
                   </span>
 
-                  {/* Kortix loading animation */}
-                  <KortixLoader customSize={16} />
+                  {/* OMAR AI loading animation */}
+                  <OMAR AILoader customSize={16} />
                 </motion.div>
               );
             })}

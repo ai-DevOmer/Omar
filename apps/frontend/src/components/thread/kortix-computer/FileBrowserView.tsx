@@ -25,7 +25,7 @@ import {
   Eye,
   ExternalLink,
 } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,12 +58,12 @@ import { useDownloadRestriction } from '@/hooks/billing';
 import JSZip from 'jszip';
 import { normalizeFilenameToNFC } from '@/lib/utils/unicode';
 import { cn } from '@/lib/utils';
-import { useKortixComputerStore } from '@/stores/kortix-computer-store';
+import { useOMAR AIComputerStore } from '@/stores/omar-ai-computer-store';
 import { useFileViewerStore } from '@/stores/file-viewer-store';
 import { usePresentationViewerStore } from '@/stores/presentation-viewer-store';
 import { Badge } from '@/components/ui/badge';
 import { VersionBanner } from './VersionBanner';
-import { KortixComputerHeader } from './KortixComputerHeader';
+import { OMAR AIComputerHeader } from './OMAR AIComputerHeader';
 import { useFileData } from '@/hooks/use-file-data';
 import { PresentationSlidePreview } from '../tool-views/presentation-tools/PresentationSlidePreview';
 import { PdfRenderer } from '@/components/file-renderers/pdf-renderer';
@@ -339,7 +339,7 @@ function VideoThumbnail({
   if (isLoading) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-muted/10">
-        <KortixLoader size="small" />
+        <OMAR AILoader size="small" />
       </div>
     );
   }
@@ -374,7 +374,7 @@ function SpreadsheetThumbnail({ data, isLoading }: { data: string[][]; isLoading
   if (isLoading) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-white dark:bg-zinc-900">
-        <KortixLoader size="small" />
+        <OMAR AILoader size="small" />
       </div>
     );
   }
@@ -491,7 +491,7 @@ function ThumbnailPreview({
   if (isLoading && (needsBlobContent || needsTextContent)) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-muted/10">
-        <KortixLoader size="small" />
+        <OMAR AILoader size="small" />
       </div>
     );
   }
@@ -581,7 +581,7 @@ interface FileBrowserViewProps {
   project?: Project;
   projectId?: string;
   /** 
-   * 'default' - Side panel view in Kortix Computer (shows all files)
+   * 'default' - Side panel view in OMAR AI Computer (shows all files)
    * 'library' - Full page library view with larger cards and different layout
    * 'inline-library' - Side panel view with library filtering (main outputs only) and thumbnails
    */
@@ -602,7 +602,7 @@ export function FileBrowserView({
   const shouldFilterFiles = isLibraryView || isInlineLibrary;
   const { session } = useAuth();
   
-  // Kortix Computer Store
+  // OMAR AI Computer Store
   const { 
     currentPath, 
     navigateToPath,
@@ -611,7 +611,7 @@ export function FileBrowserView({
     selectedVersionDate,
     setSelectedVersion,
     clearSelectedVersion,
-  } = useKortixComputerStore();
+  } = useOMAR AIComputerStore();
 
   // File viewer store (for library view - opens fullscreen modal)
   const openFileViewer = useFileViewerStore((state) => state.openFile);
@@ -753,7 +753,7 @@ export function FileBrowserView({
             const presentationName = file.path.split('/').pop() || 'presentation';
             openPresentation(presentationName, project.sandbox.sandbox_url, 1);
           } else {
-            // In side panel view, use kortix computer store
+            // In side panel view, use omar-ai computer store
             openFile(file.path);
           }
         } else {
@@ -771,7 +771,7 @@ export function FileBrowserView({
             accessToken: session.access_token,
           });
         } else {
-          // In side panel view, use kortix computer store
+          // In side panel view, use omar-ai computer store
           // FileViewerView will detect selectedVersion from store
           openFile(file.path);
         }
@@ -1396,7 +1396,7 @@ export function FileBrowserView({
         className="text-muted-foreground"
       >
         {isDownloadingAll ? (
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
         ) : (
           <Download className="h-4 w-4" />
         )}
@@ -1410,7 +1410,7 @@ export function FileBrowserView({
         className="text-muted-foreground"
       >
         {isUploading ? (
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
         ) : (
           <Upload className="h-4 w-4" />
         )}
@@ -1426,7 +1426,7 @@ export function FileBrowserView({
             className="gap-1.5 text-muted-foreground"
           >
             {isLoadingVersions ? (
-              <KortixLoader size="small" />
+              <OMAR AILoader size="small" />
             ) : (
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1442,7 +1442,7 @@ export function FileBrowserView({
         <DropdownMenuContent align="end" className="max-h-[400px] overflow-y-auto w-[320px]">
           {isLoadingVersions ? (
             <div className="flex items-center justify-center py-8">
-              <KortixLoader size="small" />
+              <OMAR AILoader size="small" />
               <span className="ml-2 text-sm text-muted-foreground">Loading history...</span>
             </div>
           ) : workspaceVersions.length === 0 ? (
@@ -1493,7 +1493,7 @@ export function FileBrowserView({
       {/* Download progress */}
       {downloadProgress && (
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground px-2">
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
           <span>
             {downloadProgress.total > 0
               ? `${downloadProgress.current}/${downloadProgress.total}`
@@ -1512,7 +1512,7 @@ export function FileBrowserView({
         title="Download folder"
       >
         {isDownloadingAll ? (
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
         ) : (
           <Download className="h-4 w-4" />
         )}
@@ -1527,7 +1527,7 @@ export function FileBrowserView({
         title={selectedVersion ? 'Cannot upload while viewing historical version' : 'Upload file'}
       >
         {isUploading ? (
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
         ) : (
           <Upload className="h-4 w-4" />
         )}
@@ -1545,7 +1545,7 @@ export function FileBrowserView({
             className="h-8 px-3 gap-1.5 text-xs bg-transparent border border-border rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent/50"
           >
             {isLoadingVersions ? (
-              <KortixLoader size="small" />
+              <OMAR AILoader size="small" />
             ) : (
               <svg className="h-3.5 w-3.5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1567,7 +1567,7 @@ export function FileBrowserView({
         <DropdownMenuContent align="end" className="max-h-[400px] overflow-y-auto w-[320px]">
           {isLoadingVersions ? (
             <div className="flex items-center justify-center py-8">
-              <KortixLoader size="small" />
+              <OMAR AILoader size="small" />
               <span className="ml-2 text-sm text-muted-foreground">Loading history...</span>
             </div>
           ) : workspaceVersions.length === 0 ? (
@@ -1734,7 +1734,7 @@ export function FileBrowserView({
         <div className="flex-1 flex flex-col overflow-hidden">
           {(isLoadingFiles || isLoadingVersionFiles) ? (
             <div className="flex-1 flex items-center justify-center">
-              <KortixLoader size="medium" />
+              <OMAR AILoader size="medium" />
             </div>
           ) : mainOutputFiles.length === 0 && otherFiles.length === 0 ? (
             <div className="flex-1 flex items-center justify-center">
@@ -1880,7 +1880,7 @@ export function FileBrowserView({
               <span className="text-xs text-zinc-700 dark:text-zinc-400">This will replace current files with the selected version snapshot.</span>
             </div>
             {revertLoadingInfo ? (
-              <div className="py-6 flex items-center justify-center"><KortixLoader size="medium" /></div>
+              <div className="py-6 flex items-center justify-center"><OMAR AILoader size="medium" /></div>
             ) : revertCommitInfo ? (
               <div className="mt-2">
                 <div className="text-sm font-medium mb-1">{revertCommitInfo.message}</div>
@@ -1901,7 +1901,7 @@ export function FileBrowserView({
             <DialogFooter>
               <Button variant="ghost" onClick={() => setRevertModalOpen(false)} disabled={revertInProgress}>Cancel</Button>
               <Button onClick={performRevert} disabled={revertInProgress}>
-                {revertInProgress ? (<><KortixLoader size="small" className="mr-2" />Restoring...</>) : 'Restore'}
+                {revertInProgress ? (<><OMAR AILoader size="small" className="mr-2" />Restoring...</>) : 'Restore'}
               </Button>
             </DialogFooter>
             <DialogClose />
@@ -1924,7 +1924,7 @@ export function FileBrowserView({
   return (
     <div className="h-full flex flex-col overflow-hidden">
       {/* Header with Breadcrumb Navigation */}
-      <KortixComputerHeader
+      <OMAR AIComputerHeader
         icon={Home}
         onIconClick={navigateHome}
         iconTitle="Home"
@@ -1946,7 +1946,7 @@ export function FileBrowserView({
       <div className="flex-1 overflow-hidden max-w-full min-w-0">
         {(isLoadingFiles || isLoadingVersionFiles) ? (
           <div className="h-full w-full max-w-full flex flex-col items-center justify-center gap-2 min-w-0">
-            <KortixLoader size="medium" />
+            <OMAR AILoader size="medium" />
             <p className="text-xs text-muted-foreground">
               {isLoadingVersionFiles ? 'Loading version...' : 'Loading files...'}
             </p>
@@ -2195,7 +2195,7 @@ export function FileBrowserView({
 
           {revertLoadingInfo ? (
             <div className="py-6 flex items-center justify-center">
-              <KortixLoader size="medium" />
+              <OMAR AILoader size="medium" />
             </div>
           ) : revertCommitInfo ? (
             <div className="mt-2">
@@ -2244,7 +2244,7 @@ export function FileBrowserView({
           <DialogFooter>
             <Button variant="ghost" onClick={() => setRevertModalOpen(false)} disabled={revertInProgress}>Cancel</Button>
             <Button onClick={performRevert} disabled={revertInProgress}>
-              {revertInProgress ? (<><KortixLoader size="small" className="mr-2" />Restoring...</>) : 'Restore'}
+              {revertInProgress ? (<><OMAR AILoader size="small" className="mr-2" />Restoring...</>) : 'Restore'}
             </Button>
           </DialogFooter>
 

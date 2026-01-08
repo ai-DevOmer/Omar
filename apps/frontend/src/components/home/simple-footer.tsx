@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { OMAR AILogo } from '@/components/sidebar/omar-ai-logo';
 import { LocaleSwitcher } from '@/components/home/locale-switcher';
 import { useGitHubStars } from '@/hooks/utils';
 
 export function SimpleFooter() {
   const currentYear = new Date().getFullYear();
-  const { formattedStars, loading: starsLoading } = useGitHubStars('kortix-ai', 'suna');
+  const { formattedStars, loading: starsLoading } = useGitHubStars('omar-ai-ai', 'suna');
 
   return (
     <footer className="w-full bg-background/50 backdrop-blur-sm">
@@ -18,12 +18,12 @@ export function SimpleFooter() {
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2 group">
-              <KortixLogo size={24} />
+              <OMAR AILogo size={24} />
             </Link>
             {/* Social links */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://github.com/kortix-ai/suna"
+                href="https://github.com/omar-ai-ai/suna"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -62,7 +62,7 @@ export function SimpleFooter() {
                 </svg>
               </a>
               <a
-                href="https://x.com/kortix"
+                href="https://x.com/omar-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
@@ -80,7 +80,7 @@ export function SimpleFooter() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/company/kortix/"
+                href="https://www.linkedin.com/company/omar-ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -127,7 +127,7 @@ export function SimpleFooter() {
         <div className="mt-12 pt-8 border-t border-border/40">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Kortix. All rights reserved.
+              © {currentYear} OMAR AI. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <LocaleSwitcher variant="compact" />

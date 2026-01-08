@@ -1,1 +1,1 @@
-# Kortix Mobile App
+# OMAR AI Mobile App

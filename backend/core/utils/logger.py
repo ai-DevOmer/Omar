@@ -126,7 +126,7 @@ def _setup_cloudwatch_logging() -> None:
         import boto3
 
         default_log_group = (
-            "/kortix/production" if ENV_MODE == "PRODUCTION" else "/kortix/staging"
+            "/omar-ai/production" if ENV_MODE == "PRODUCTION" else "/omar-ai/staging"
         )
         log_group_name = os.getenv("CLOUDWATCH_LOG_GROUP", default_log_group)
         aws_region = os.getenv("AWS_DEFAULT_REGION", os.getenv("AWS_REGION", "us-west-2"))

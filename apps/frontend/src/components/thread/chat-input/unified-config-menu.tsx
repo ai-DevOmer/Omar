@@ -19,9 +19,9 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Search, Check, ChevronDown, Plus, Plug, Brain, LibraryBig, Zap, Sparkles, ChevronLeft } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useAgents } from '@/hooks/agents/use-agents';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { OMAR AILogo } from '@/components/sidebar/omar-ai-logo';
 import { SpotlightCard } from '@/components/ui/spotlight-card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -117,7 +117,7 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
 
     const placeholderSunaAgent = useMemo(() => ({
         agent_id: undefined,
-        name: 'Kortix',
+        name: 'OMAR AI',
         metadata: { is_suna_default: true }
     }), []);
 
@@ -185,7 +185,7 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
 
     const renderAgentIcon = useCallback((agent: any, size: number = 32) => {
         if (!agent && (isLoading || sunaAgent)) {
-            return <AgentAvatar isSunaDefault={true} agentName="Kortix" size={size} className="flex-shrink-0 !border-0" />;
+            return <AgentAvatar isSunaDefault={true} agentName="OMAR AI" size={size} className="flex-shrink-0 !border-0" />;
         }
         return <AgentAvatar agent={agent} agentId={agent?.agent_id} size={size} className="flex-shrink-0 !border-0" />;
     }, [isLoading, sunaAgent]);
@@ -259,7 +259,7 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
                             >
                                 {isFetching ? (
                                     <>
-                                        <KortixLoader size="small" className="mr-2" />
+                                        <OMAR AILoader size="small" className="mr-2" />
                                         Loading...
                                     </>
                                 ) : (
@@ -379,8 +379,8 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
         ) : null
     ), [onAgentSelect, selectedAgentId, displayAgent?.agent_id, handleQuickAction]);
 
-    // Check if current agent is Kortix (used in multiple places)
-    const isKortixAgent = !displayAgent?.name || displayAgent?.name === 'Kortix';
+    // Check if current agent is OMAR AI (used in multiple places)
+    const isOMAR AIAgent = !displayAgent?.name || displayAgent?.name === 'OMAR AI';
 
     // Mobile Sheet Content
     const MobileSheetContent = useCallback(() => {
@@ -444,10 +444,10 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
                                 onClick={() => setMobileSection('agents')}
                                 className="w-full flex items-center gap-3 p-3 rounded-2xl border border-border bg-card hover:bg-muted/50 active:bg-muted/70 transition-colors"
                             >
-                                {isKortixAgent ? (
+                                {isOMAR AIAgent ? (
                                     <img
-                                        src="/kortix-logomark-white.svg"
-                                        alt="Kortix"
+                                        src="/omar-ai-logomark-white.svg"
+                                        alt="OMAR AI"
                                         className="dark:invert-0 invert flex-shrink-0 ml-1"
                                         style={{ height: '14px', width: 'auto' }}
                                     />
@@ -475,7 +475,7 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
                 )}
             </div>
         );
-    }, [mobileSection, searchQuery, onAgentSelect, displayAgent, isLoading, placeholderSunaAgent, renderAgentIcon, selectedAgentId, AgentsList, CreateWorkerButton, WorkerSettingsButtons, isKortixAgent]);
+    }, [mobileSection, searchQuery, onAgentSelect, displayAgent, isLoading, placeholderSunaAgent, renderAgentIcon, selectedAgentId, AgentsList, CreateWorkerButton, WorkerSettingsButtons, isOMAR AIAgent]);
 
     // Trigger button
     const TriggerButton = (
@@ -488,10 +488,10 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
         >
             {onAgentSelect ? (
                 <div className="flex items-center gap-2 min-w-0 max-w-[180px]">
-                    {isKortixAgent ? (
+                    {isOMAR AIAgent ? (
                         <img
-                            src="/kortix-logomark-white.svg"
-                            alt="Kortix"
+                            src="/omar-ai-logomark-white.svg"
+                            alt="OMAR AI"
                             className="dark:invert-0 invert flex-shrink-0 ml-1"
                             style={{ height: '12px', width: 'auto' }}
                         />
@@ -507,7 +507,7 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
                 </div>
             ) : (
                 <div className="flex items-center gap-1.5">
-                    <KortixLogo size={20} />
+                    <OMAR AILogo size={20} />
                     <ChevronDown size={12} className="opacity-60" />
                 </div>
             )}
@@ -570,10 +570,10 @@ const LoggedInMenu: React.FC<UnifiedConfigMenuProps> = memo(function LoggedInMen
                                         <SpotlightCard className="transition-colors cursor-pointer bg-transparent">
                                             <DropdownMenuSub>
                                                 <DropdownMenuSubTrigger className="flex items-center gap-3 text-sm cursor-pointer px-1 py-1 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent w-full">
-                                                    {isKortixAgent ? (
+                                                    {isOMAR AIAgent ? (
                                                         <img
-                                                            src="/kortix-logomark-white.svg"
-                                                            alt="Kortix"
+                                                            src="/omar-ai-logomark-white.svg"
+                                                            alt="OMAR AI"
                                                             className="dark:invert-0 invert flex-shrink-0"
                                                             style={{ height: '12px', width: 'auto' }}
                                                         />
@@ -671,9 +671,9 @@ const GuestMenu: React.FC<UnifiedConfigMenuProps> = memo(function GuestMenu() {
                     >
                         <div className="flex items-center gap-2 min-w-0 max-w-[180px]">
                             <div className="flex-shrink-0">
-                                <KortixLogo size={20} />
+                                <OMAR AILogo size={20} />
                             </div>
-                            <span className="truncate text-sm font-medium">Kortix</span>
+                            <span className="truncate text-sm font-medium">OMAR AI</span>
                             <ChevronDown size={12} className="opacity-60 flex-shrink-0" />
                         </div>
                     </Button>

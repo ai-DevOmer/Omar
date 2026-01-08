@@ -12,7 +12,7 @@ import {
 import { WebView } from 'react-native-webview';
 import { Text } from '@/components/ui/text';
 import { Icon } from '@/components/ui/icon';
-import { KortixLoader } from '@/components/ui';
+import { OMAR AILoader } from '@/components/ui';
 import {
   X,
   ChevronLeft,
@@ -530,7 +530,7 @@ export function FullScreenPresentationViewer({
                 disabled={!metadata || isExporting !== null}
               >
                 {isExporting ? (
-                  <KortixLoader size="small" />
+                  <OMAR AILoader size="small" />
                 ) : (
                   <Icon
                     as={Download}
@@ -623,7 +623,7 @@ export function FullScreenPresentationViewer({
         >
           {isLoading || !currentSlideData ? (
             <View className="items-center justify-center">
-              <KortixLoader size="large" />
+              <OMAR AILoader size="large" />
               <Text className="text-base font-roobert-medium text-foreground mt-4">
                 {retryAttempt > 0 ? `Retrying... (${retryAttempt + 1})` : 'Loading...'}
               </Text>

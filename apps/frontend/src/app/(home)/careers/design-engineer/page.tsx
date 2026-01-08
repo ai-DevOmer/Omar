@@ -93,7 +93,7 @@ export default function DesignEngineerPage() {
                 We're looking for someone rare: an engineer who can build anything and has impeccable taste. You don't need to be a designer by title, but you need to care about design as much as you care about code.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                At Kortix, you'll shape how people interact with AI. The interfaces we build aren't simple forms and buttons—they're complex, dynamic experiences where AI agents work alongside humans. This requires both deep technical skill and a keen eye for what feels right.
+                At OMAR AI, you'll shape how people interact with AI. The interfaces we build aren't simple forms and buttons—they're complex, dynamic experiences where AI agents work alongside humans. This requires both deep technical skill and a keen eye for what feels right.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 You'll obsess over the details. The weight of a shadow. The timing of an animation. The way a hover state communicates affordance. You'll also ship fast, because taste without speed is just perfectionism. The magic is in having both.
@@ -216,7 +216,7 @@ export default function DesignEngineerPage() {
                 </p>
               </div>
               <Button asChild size="lg">
-                <a href="mailto:careers@kortix.ai?subject=Design Engineer Application">
+                <a href="mailto:careers@omar-ai.ai?subject=Design Engineer Application">
                   Apply now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>

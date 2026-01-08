@@ -22,7 +22,7 @@ import {
   Eye,
   Lock,
 } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { Button } from '@/components/ui/button';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Card } from '@/components/ui/card';
@@ -1843,7 +1843,7 @@ export function SunaModesPanel({
                 {isPdfLoading && (
                   <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-lg z-10">
                     <div className="flex flex-col items-center gap-3">
-                      <KortixLoader size="medium" />
+                      <OMAR AILoader size="medium" />
                       <p className="text-sm text-muted-foreground">Loading preview...</p>
                     </div>
                   </div>

@@ -6,13 +6,13 @@ import { CheckCircle2, AlertCircle } from 'lucide-react';
 import { useAuth } from '@/components/AuthProvider';
 import { useInitializeAccount } from '@/hooks/account';
 import { createClient } from '@/lib/supabase/client';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { OMAR AILogo } from '@/components/sidebar/omar-ai-logo';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 // Lazy load heavy components
 const AnimatedBg = lazy(() => import('@/components/ui/animated-bg').then(mod => ({ default: mod.AnimatedBg })));
-const KortixLoader = lazy(() => import('@/components/ui/kortix-loader').then(mod => ({ default: mod.KortixLoader })));
+const OMAR AILoader = lazy(() => import('@/components/ui/omar-ai-loader').then(mod => ({ default: mod.OMAR AILoader })));
 
 export default function SettingUpPage() {
   const router = useRouter();
@@ -128,7 +128,7 @@ export default function SettingUpPage() {
         </Suspense>
 
         <div className="relative z-10 w-full max-w-[456px] flex flex-col items-center gap-8">
-          <KortixLogo size={32} />
+          <OMAR AILogo size={32} />
 
           {(status === 'checking' || status === 'initializing') && (
             <>
@@ -153,8 +153,8 @@ export default function SettingUpPage() {
                       </div>
                     </div>
                     <div className="h-12 w-12 flex items-center justify-center">
-                      <Suspense fallback={<KortixLoader size="small" />}>
-                        <KortixLoader size="small" customSize={24} />
+                      <Suspense fallback={<OMAR AILoader size="small" />}>
+                        <OMAR AILoader size="small" customSize={24} />
                       </Suspense>
                     </div>
                   </div>

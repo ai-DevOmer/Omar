@@ -16,7 +16,7 @@ import {
   FileText,
   Download,
 } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import {
   EditableFileRenderer,
   getEditableFileType,
@@ -32,11 +32,11 @@ import {
 } from '@/hooks/files';
 import { useDownloadRestriction } from '@/hooks/billing';
 import { cn } from '@/lib/utils';
-import { useKortixComputerStore } from '@/stores/kortix-computer-store';
+import { useOMAR AIComputerStore } from '@/stores/omar-ai-computer-store';
 import { PresentationViewer } from '../tool-views/presentation-tools/PresentationViewer';
 import { FullScreenPresentationViewer } from '../tool-views/presentation-tools/FullScreenPresentationViewer';
 import { usePresentationViewerStore } from '@/stores/presentation-viewer-store';
-import { KortixComputerHeader } from './KortixComputerHeader';
+import { OMAR AIComputerHeader } from './OMAR AIComputerHeader';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -146,7 +146,7 @@ export function FileViewerView({
 }: FileViewerViewProps) {
   const { session } = useAuth();
 
-  // Kortix Computer Store
+  // OMAR AI Computer Store
   const {
     filePathList,
     currentFileIndex,
@@ -161,7 +161,7 @@ export function FileViewerView({
     selectedVersionDate: globalSelectedVersionDate,
     setSelectedVersion: setGlobalSelectedVersion,
     clearSelectedVersion: clearGlobalSelectedVersion,
-  } = useKortixComputerStore();
+  } = useOMAR AIComputerStore();
 
   // React Query client for cache invalidation
   const queryClient = useQueryClient();
@@ -769,7 +769,7 @@ export function FileViewerView({
     return (
       <div className="h-full flex flex-col overflow-hidden bg-background">
         {/* Header */}
-        <KortixComputerHeader
+        <OMAR AIComputerHeader
           icon={Home}
           onIconClick={goBackToBrowser}
           iconTitle="Back to files"
@@ -864,7 +864,7 @@ export function FileViewerView({
   return (
     <div className="h-full flex flex-col overflow-hidden bg-background">
       {/* Header */}
-      <KortixComputerHeader
+      <OMAR AIComputerHeader
         icon={Home}
         onIconClick={goBackToBrowser}
         iconTitle="Back to files"
@@ -909,7 +909,7 @@ export function FileViewerView({
                     className="h-8 w-8 p-0 bg-transparent border border-border rounded-xl text-muted-foreground"
                     title="Saving..."
                   >
-                    <KortixLoader size="small" />
+                    <OMAR AILoader size="small" />
                   </Button>
                 ) : mdEditorControls.saveState === 'saved' ? (
                   <Button
@@ -977,7 +977,7 @@ export function FileViewerView({
                 className="h-8 px-3 gap-1.5 text-xs bg-transparent border border-border rounded-xl text-muted-foreground hover:text-foreground hover:bg-accent/50"
               >
                 {isLoadingVersions ? (
-                  <KortixLoader size="small" />
+                  <OMAR AILoader size="small" />
                 ) : (
                   <svg className="h-3.5 w-3.5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -999,7 +999,7 @@ export function FileViewerView({
             <DropdownMenuContent align="end" className="max-h-[400px] overflow-y-auto w-[320px]">
               {isLoadingVersions ? (
                 <div className="flex items-center justify-center py-8">
-                  <KortixLoader size="small" />
+                  <OMAR AILoader size="small" />
                   <span className="ml-2 text-sm text-muted-foreground">Loading history...</span>
                 </div>
               ) : fileVersions.length === 0 ? (
@@ -1110,7 +1110,7 @@ export function FileViewerView({
               title="Download file"
             >
               {isDownloading ? (
-                <KortixLoader size="small" />
+                <OMAR AILoader size="small" />
               ) : (
                 <Download className="h-4 w-4" />
               )}
@@ -1152,7 +1152,7 @@ export function FileViewerView({
           
           return (isCachedFileLoading || isLoadingVersionContent || (hasError && isStillRetrying)) ? (
           <div className="h-full w-full max-w-full flex flex-col items-center justify-center min-w-0">
-            <KortixLoader size="medium" className="mb-3" />
+            <OMAR AILoader size="medium" className="mb-3" />
             <p className="text-sm text-muted-foreground">
               {isLoadingVersionContent ? 'Loading version...' : `Loading ${fileName}`}
             </p>
@@ -1279,7 +1279,7 @@ export function FileViewerView({
 
           {revertLoadingInfo ? (
             <div className="py-6 flex items-center justify-center">
-              <KortixLoader size="medium" />
+              <OMAR AILoader size="medium" />
             </div>
           ) : revertCommitInfo ? (
             <div className="mt-2">
@@ -1370,7 +1370,7 @@ export function FileViewerView({
           <DialogFooter>
             <Button variant="ghost" onClick={() => setRevertModalOpen(false)} disabled={revertInProgress}>Cancel</Button>
             <Button onClick={performRevert} disabled={revertInProgress || (revertMode === 'single' && !revertCurrentRelativePath)}>
-              {revertInProgress ? (<><KortixLoader size="small" className="mr-2" />Restoring...</>) : 'Restore'}
+              {revertInProgress ? (<><OMAR AILoader size="small" className="mr-2" />Restoring...</>) : 'Restore'}
             </Button>
           </DialogFooter>
 

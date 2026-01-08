@@ -93,7 +93,7 @@ export default function AIEngineerPage() {
                 We're building AI workers—not chatbots, not narrow tools, but general-purpose agents that can autonomously complete complex tasks. This is hard. Really hard. And that's exactly why we need you.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                As an AI Engineer at Kortix, you'll work on the frontier of what's possible with LLMs and agent systems. You'll design architectures that let AI reason, plan, and act. You'll debug mysterious failures and discover why an agent decided to do something unexpected. You'll ship features that make users say "I can't believe this actually works."
+                As an AI Engineer at OMAR AI, you'll work on the frontier of what's possible with LLMs and agent systems. You'll design architectures that let AI reason, plan, and act. You'll debug mysterious failures and discover why an agent decided to do something unexpected. You'll ship features that make users say "I can't believe this actually works."
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 We move fast. We ship constantly. We debate ideas openly and let the best ones win. If you're excited about building AI that matters, we want to talk.
@@ -216,7 +216,7 @@ export default function AIEngineerPage() {
                 </p>
               </div>
               <Button asChild size="lg">
-                <a href="mailto:careers@kortix.ai?subject=AI Engineer Application">
+                <a href="mailto:careers@omar-ai.ai?subject=AI Engineer Application">
                   Apply now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>

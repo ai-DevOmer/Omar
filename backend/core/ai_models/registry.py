@@ -24,8 +24,8 @@ HAIKU_BEDROCK_ARN = build_bedrock_profile_arn(HAIKU_4_5_PROFILE_ID)
 SONNET_BEDROCK_ARN = build_bedrock_profile_arn(SONNET_4_5_PROFILE_ID)
 
 # Default model IDs
-FREE_MODEL_ID = "kortix/basic"
-PREMIUM_MODEL_ID = "kortix/power"
+FREE_MODEL_ID = "omar-ai/basic"
+PREMIUM_MODEL_ID = "omar-ai/power"
 
 # Haiku 4.5 pricing (used for billing resolution)
 HAIKU_PRICING = ModelPricing(
@@ -59,19 +59,19 @@ class ModelRegistry:
         self._litellm_id_to_pricing["minimax/minimax-m2.1"] = minimax_m2_pricing
         self._litellm_id_to_pricing["openrouter/minimax/minimax-m2.1"] = minimax_m2_pricing
         
-        # Kortix Basic - using Anthropic Claude Haiku 4.5 Bedrock
+        # OMAR AI Basic - using Anthropic Claude Haiku 4.5 Bedrock
         basic_litellm_id = build_bedrock_profile_arn(HAIKU_4_5_PROFILE_ID) if SHOULD_USE_BEDROCK else "anthropic/claude-haiku-4-5-20251001"
         
         self.register(Model(
-            id="kortix/basic",
-            name="Kortix Basic",
+            id="omar-ai/basic",
+            name="OMAR AI Basic",
             litellm_model_id=basic_litellm_id,
             # MiniMax vision fallback (only enable when using MiniMax as primary model):
             # vision_litellm_model_id=HAIKU_BEDROCK_ARN,
             # vision_context_window=200_000,
             # vision_pricing=HAIKU_PRICING,
             provider=ModelProvider.ANTHROPIC,
-            aliases=["kortix-basic", "Kortix Basic"],
+            aliases=["omar-ai-basic", "OMAR AI Basic"],
             context_window=200_000,
             capabilities=[
                 ModelCapability.CHAT,
@@ -97,13 +97,13 @@ class ModelRegistry:
             )
         ))
         
-        # Kortix Power - using Anthropic Claude Haiku 4.5
+        # OMAR AI Power - using Anthropic Claude Haiku 4.5
         # MiniMax M2.1: power_litellm_id = "openrouter/minimax/minimax-m2.1"  # 204,800 context $0.30/M input tokens $1.20/M output tokens
         power_litellm_id = build_bedrock_profile_arn(HAIKU_4_5_PROFILE_ID) if SHOULD_USE_BEDROCK else "anthropic/claude-haiku-4-5-20251001"
         
         self.register(Model(
-            id="kortix/power",
-            name="Kortix Advanced Mode",
+            id="omar-ai/power",
+            name="OMAR AI Advanced Mode",
             litellm_model_id=power_litellm_id,
             # MiniMax vision fallback (only enable when using MiniMax as primary model):
             # vision_litellm_model_id=HAIKU_BEDROCK_ARN,
@@ -111,7 +111,7 @@ class ModelRegistry:
             # vision_pricing=HAIKU_PRICING,
             # MiniMax: provider=ModelProvider.OPENROUTER,
             provider=ModelProvider.ANTHROPIC,
-            aliases=["kortix-power", "Kortix POWER Mode", "Kortix Power", "Kortix Advanced Mode"],
+            aliases=["omar-ai-power", "OMAR AI POWER Mode", "OMAR AI Power", "OMAR AI Advanced Mode"],
             context_window=200_000,
             # MiniMax capabilities (includes THINKING):
             # capabilities=[
@@ -154,7 +154,7 @@ class ModelRegistry:
             )
         ))
         
-        # Kortix Test - uses MiniMax M2.1 via direct API (only in LOCAL and STAGING, not PRODUCTION)
+        # OMAR AI Test - uses MiniMax M2.1 via direct API (only in LOCAL and STAGING, not PRODUCTION)
         if config.ENV_MODE != EnvMode.PRODUCTION:
             # MiniMax direct API - requires MINIMAX_API_KEY env var
             # Docs: https://docs.litellm.ai/docs/providers/minimax
@@ -170,11 +170,11 @@ class ModelRegistry:
             # test_litellm_id ="groq/moonshotai/kimi-k2-instruct" 
 
             self.register(Model(
-                id="kortix/test",
-                name="Kortix Test",
+                id="omar-ai/test",
+                name="OMAR AI Test",
                 litellm_model_id=test_litellm_id,
                 provider=ModelProvider.MINIMAX,
-                aliases=["kortix-test", "Kortix Test"],
+                aliases=["omar-ai-test", "OMAR AI Test"],
                 context_window=200_000,
                 capabilities=[
                     ModelCapability.CHAT,
@@ -240,7 +240,7 @@ class ModelRegistry:
         """Resolve a model ID to its registry ID.
         
         Handles:
-        - Registry model IDs (kortix/basic) → returns as-is
+        - Registry model IDs (omar-ai/basic) → returns as-is
         - Model aliases → resolves to registry ID
         - LiteLLM model IDs (Bedrock ARNs) → reverse lookup to registry ID
         """
@@ -352,7 +352,7 @@ class ModelRegistry:
         """Get pricing for a LiteLLM model ID (handles both registry models and raw IDs).
         
         This is the primary method for billing to resolve pricing, as it handles:
-        1. Registry model IDs (kortix/basic)
+        1. Registry model IDs (omar-ai/basic)
         2. LiteLLM model IDs that map to registry models (with/without provider prefix)
         3. Fallback model IDs (like Haiku Bedrock ARN) that have explicit pricing
         """

@@ -40,7 +40,7 @@ class AgentTemplate:
     tags: List[str] = field(default_factory=list)
     categories: List[str] = field(default_factory=list)
     is_public: bool = False
-    is_kortix_team: bool = False
+    is_omar-ai_team: bool = False
     marketplace_published_at: Optional[datetime] = None
     download_count: int = 0
     created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
@@ -294,7 +294,7 @@ class TemplateService:
     
     async def get_public_templates(
         self,
-        is_kortix_team: Optional[bool] = None,
+        is_omar-ai_team: Optional[bool] = None,
         limit: Optional[int] = None,
         offset: int = 0,
         search: Optional[str] = None,
@@ -304,8 +304,8 @@ class TemplateService:
         
         query = client.table('agent_templates').select('*').eq('is_public', True)
         
-        if is_kortix_team is not None:
-            query = query.eq('is_kortix_team', is_kortix_team)
+        if is_omar-ai_team is not None:
+            query = query.eq('is_omar-ai_team', is_omar-ai_team)
         
         if search:
             query = query.ilike("name", f"%{search}%")
@@ -654,7 +654,7 @@ class TemplateService:
             tags=data.get('tags', []),
             categories=data.get('categories', []),
             is_public=data.get('is_public', False),
-            is_kortix_team=data.get('is_kortix_team', False),
+            is_omar-ai_team=data.get('is_omar-ai_team', False),
             marketplace_published_at=datetime.fromisoformat(data['marketplace_published_at'].replace('Z', '+00:00')) if data.get('marketplace_published_at') else None,
             download_count=data.get('download_count', 0),
             created_at=datetime.fromisoformat(data['created_at'].replace('Z', '+00:00')),

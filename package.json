@@ -2,9 +2,9 @@
   "name": "agentpress",
   "private": true,
   "scripts": {
-    "dev:frontend": "pnpm --filter Kortix dev",
-    "dev:mobile": "pnpm --filter kortix dev",
-    "build:frontend": "pnpm --filter Kortix build"
+    "dev:frontend": "pnpm --filter OMAR AI dev",
+    "dev:mobile": "pnpm --filter omar-ai dev",
+    "build:frontend": "pnpm --filter OMAR AI build"
   },
   "pnpm": {
     "overrides": {

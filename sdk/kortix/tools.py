@@ -60,4 +60,4 @@ class AgentPressTools(str, Enum):
         return desc
 
 
-KortixTools = Union[AgentPressTools, MCPTools]
+OMAR AITools = Union[AgentPressTools, MCPTools]

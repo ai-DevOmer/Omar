@@ -11,7 +11,7 @@ type ParagraphItem =
   | { text: string; linkText: string; linkHref: string };
 
 const paragraphs: ParagraphItem[] = [
-  "We are Kortix.",
+  "We are OMAR AI.",
   "Eight people across three continents. Some wake to European mornings, others to American dawns, a few greet the day from Asia. The sun never sets on our work. When one logs off, another picks up. A continuous stream that never stops.",
   "Our mission is to build a general AI worker that can truly take over real world tasks. Not a chatbot. Not a narrow tool. A worker that helps people save time and focus on what actually matters.",
   "We are essentially a tribe.",
@@ -185,7 +185,7 @@ export default function AboutPage() {
           <div className="relative aspect-[16/9] w-full overflow-hidden">
             <Image
               src="/images/team.webp"
-              alt="The Kortix team"
+              alt="The OMAR AI team"
               fill
               className="object-cover object-top"
               priority
@@ -255,11 +255,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Kortix logo */}
+              {/* OMAR AI logo */}
               <div className="text-center mt-4">
                 <Image
-                  src="/kortix-symbol.svg"
-                  alt="Kortix"
+                  src="/omar-ai-symbol.svg"
+                  alt="OMAR AI"
                   width={16}
                   height={13}
                   className="inline-block opacity-20 dark:invert"
@@ -299,11 +299,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Kortix logo */}
+              {/* OMAR AI logo */}
               <div className="text-center mt-4">
                 <Image
-                  src="/kortix-symbol.svg"
-                  alt="Kortix"
+                  src="/omar-ai-symbol.svg"
+                  alt="OMAR AI"
                   width={16}
                   height={13}
                   className="inline-block opacity-20 dark:invert"

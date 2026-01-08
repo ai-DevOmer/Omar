@@ -121,11 +121,11 @@ export function DashboardContent() {
     ? agents.find(agent => agent.agent_id === selectedAgentId)
     : null;
   const sunaAgent = agents.find(agent => agent.metadata?.is_suna_default === true);
-  const displayName = selectedAgent?.name || 'Kortix';
+  const displayName = selectedAgent?.name || 'OMAR AI';
   const agentAvatar = undefined;
-  // Show Kortix modes while loading (assume Kortix is default) or when Kortix agent is selected
+  // Show OMAR AI modes while loading (assume OMAR AI is default) or when OMAR AI agent is selected
   const isSunaAgent = isLoadingAgents 
-    ? true // Show Kortix modes while loading
+    ? true // Show OMAR AI modes while loading
     : (selectedAgent?.metadata?.is_suna_default || (!selectedAgentId && sunaAgent !== undefined) || false);
 
   const threadQuery = useThreadQuery(initiatedThreadId || '');
@@ -304,7 +304,7 @@ export function DashboardContent() {
             item_name: checkoutData.item_name,   // e.g., "Pro Yearly" - matches add_to_cart
             coupon: couponId,
             discount: discountAmount,
-            item_brand: 'Kortix AI',
+            item_brand: 'OMAR AI AI',
             item_category: 'Plans',
             item_list_id: 'plans_listing',
             item_list_name: 'Plans Listing',
@@ -501,7 +501,7 @@ export function DashboardContent() {
                         : "text-muted-foreground hover:text-foreground"
                     )}
                   >
-                    Kortix
+                    OMAR AI
                   </button>
                   <button
                     onClick={() => {

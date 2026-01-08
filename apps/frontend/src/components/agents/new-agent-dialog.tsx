@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Plus, FileJson, Code } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -152,7 +152,7 @@ export function NewAgentDialogLegacy({ open, onOpenChange, onSuccess }: NewAgent
           >
             {createNewAgentMutation.isPending ? (
               <>
-                <KortixLoader customSize={16} className="mr-1" />
+                <OMAR AILoader customSize={16} className="mr-1" />
                 Creating...
               </>
             ) : (

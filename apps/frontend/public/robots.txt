@@ -1,9 +1,9 @@
-# Kortix Robots.txt
+# OMAR AI Robots.txt
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://kortix.com/sitemap.xml
+Sitemap: https://omar-ai.com/sitemap.xml
 
 # Disallow sensitive routes
 Disallow: /api/

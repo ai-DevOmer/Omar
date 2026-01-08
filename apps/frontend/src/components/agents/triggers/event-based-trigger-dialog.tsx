@@ -12,7 +12,7 @@ import { Separator } from '@/components/ui/separator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, ArrowLeft, Info, Zap, ChevronRight, Plus, Sparkles, CheckCircle2, Link2, Activity } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useComposioAppsWithTriggers, useComposioAppTriggers, useCreateComposioEventTrigger, ComposioTriggerType } from '@/hooks/composio/use-composio-triggers';
 import { useUpdateTrigger } from '@/hooks/triggers';
 import { useComposioProfiles } from '@/hooks/composio/use-composio-profiles';
@@ -318,7 +318,7 @@ export const EventBasedTriggerDialog: React.FC<EventBasedTriggerDialogProps> = (
     const [name, setName] = useState('');
     const [prompt, setPrompt] = useState('');
     const [profileId, setProfileId] = useState('');
-    const [model, setModel] = useState('kortix/basic');
+    const [model, setModel] = useState('omar-ai/basic');
     const [executionType] = useState<'agent'>('agent');
     const [showComposioConnector, setShowComposioConnector] = useState(false);
 
@@ -365,7 +365,7 @@ export const EventBasedTriggerDialog: React.FC<EventBasedTriggerDialogProps> = (
             setName('');
             setPrompt('');
             setProfileId('');
-            setModel('kortix/basic');
+            setModel('omar-ai/basic');
             setShowComposioConnector(false);
         }
     }, [open, isEditMode]);
@@ -395,7 +395,7 @@ export const EventBasedTriggerDialog: React.FC<EventBasedTriggerDialogProps> = (
             setName(existingTrigger.name || '');
             setPrompt(triggerConfig.agent_prompt || '');
             setProfileId(triggerConfig.profile_id || '');
-            setModel(triggerConfig.model || 'kortix/basic');
+            setModel(triggerConfig.model || 'omar-ai/basic');
 
             const { agent_prompt, profile_id, provider_id, trigger_slug, qualified_name, model: _, ...triggerSpecificConfig } = triggerConfig;
             setConfig(triggerSpecificConfig);
@@ -684,7 +684,7 @@ export const EventBasedTriggerDialog: React.FC<EventBasedTriggerDialogProps> = (
                                     {isEditMode && !selectedTrigger && (loadingTriggers || !selectedApp) ? (
                                         <div className="flex-1 flex items-center justify-center p-6">
                                             <div className="text-center space-y-3">
-                                                <KortixLoader size="large" className="mx-auto" />
+                                                <OMAR AILoader size="large" className="mx-auto" />
                                                 <p className="text-sm text-muted-foreground">Loading trigger configuration...</p>
                                                 {triggersError && (
                                                     <p className="text-xs text-destructive">Error: {String(triggersError)}</p>
@@ -772,7 +772,7 @@ export const EventBasedTriggerDialog: React.FC<EventBasedTriggerDialogProps> = (
                                                                         {loadingProfiles ? (
                                                                             <SelectItem value="__loading__" disabled>
                                                                                 <div className="flex items-center gap-2">
-                                                                                    <KortixLoader customSize={12} />
+                                                                                    <OMAR AILoader customSize={12} />
                                                                                     <span>Loading...</span>
                                                                                 </div>
                                                                             </SelectItem>
@@ -845,7 +845,7 @@ export const EventBasedTriggerDialog: React.FC<EventBasedTriggerDialogProps> = (
                                                         >
                                                             {(isEditMode ? updateTrigger.isPending : createTrigger.isPending) ? (
                                                                 <>
-                                                                    <KortixLoader customSize={12} className="mr-2" />
+                                                                    <OMAR AILoader customSize={12} className="mr-2" />
                                                                     {isEditMode ? 'Updating...' : 'Creating...'}
                                                                 </>
                                                             ) : (

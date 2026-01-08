@@ -116,15 +116,15 @@ site_url = "http://localhost:3000"
 # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
 # Note: For cloud Supabase, configure these in Dashboard → Authentication → URL Configuration
 additional_redirect_urls = [
-  "kortix://auth/callback",
+  "omar-ai://auth/callback",
   "http://localhost:3000/**",
   "http://localhost:3000/auth/callback",
   "https://staging.suna.so/**",
   "https://staging.suna.so/auth/callback",
-  "https://kortix.com/**",
-  "https://kortix.com/auth/callback",
-  "https://www.kortix.com/**",
-  "https://www.kortix.com/auth/callback",
+  "https://omar-ai.com/**",
+  "https://omar-ai.com/auth/callback",
+  "https://www.omar-ai.com/**",
+  "https://www.omar-ai.com/auth/callback",
 ]
 # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 (1 week).
 jwt_expiry = 3600

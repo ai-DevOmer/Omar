@@ -18,8 +18,8 @@ import {
   CHAT_INPUT_SECTION_HEIGHT,
 } from '@/components/chat';
 import { ThreadHeader } from '@/components/threads';
-import { KortixComputer } from '@/components/kortix-computer';
-import { useKortixComputerStore } from '@/stores/kortix-computer-store';
+import { OMAR AIComputer } from '@/components/omar-ai-computer';
+import { useOMAR AIComputerStore } from '@/stores/omar-ai-computer-store';
 import { useChatCommons, type UseChatReturn, useDeleteThread, useShareThread } from '@/hooks';
 import { useThread } from '@/lib/chat';
 import { Text } from '@/components/ui/text';
@@ -241,11 +241,11 @@ export function ThreadPage({
   }, []);
 
   const {
-    isOpen: isKortixComputerOpen,
+    isOpen: isOMAR AIComputerOpen,
     openPanel,
     openFileInComputer,
     openFileBrowser,
-  } = useKortixComputerStore();
+  } = useOMAR AIComputerStore();
 
   const deleteThreadMutation = useDeleteThread();
   const shareThreadMutation = useShareThread();
@@ -253,13 +253,13 @@ export function ThreadPage({
   const { data: fullThreadData, refetch: refetchThreadData } = useThread(chat.activeThread?.id);
 
   React.useEffect(() => {
-    if (isKortixComputerOpen) {
+    if (isOMAR AIComputerOpen) {
       refetchThreadData();
     } else {
       // Clear selected tool data when panel closes
       setSelectedToolData(null);
     }
-  }, [isKortixComputerOpen, refetchThreadData]);
+  }, [isOMAR AIComputerOpen, refetchThreadData]);
 
   const messages = chat.messages || [];
   const streamingContent = chat.streamingContent || '';
@@ -672,8 +672,8 @@ export function ThreadPage({
       />
 
 
-      {isKortixComputerOpen && (
-        <KortixComputer
+      {isOMAR AIComputerOpen && (
+        <OMAR AIComputer
           toolMessages={selectedToolData?.toolMessages || []}
           currentIndex={selectedToolData?.initialIndex || 0}
           onNavigate={(newIndex) => {

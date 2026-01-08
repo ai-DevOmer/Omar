@@ -4,13 +4,13 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
-interface KortixLogoProps {
+interface OMAR AILogoProps {
   size?: number;
   variant?: 'symbol' | 'logomark';
   className?: string;
 }
 
-export function KortixLogo({ size = 24, variant = 'symbol', className }: KortixLogoProps) {
+export function OMAR AILogo({ size = 24, variant = 'symbol', className }: OMAR AILogoProps) {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -29,7 +29,7 @@ export function KortixLogo({ size = 24, variant = 'symbol', className }: KortixL
     return (
       <img
         src="/logomark-white.svg"
-        alt="Kortix"
+        alt="OMAR AI"
         className={cn(`${shouldInvert ? '' : 'invert'} flex-shrink-0`, className)}
         style={{ height: `${size}px`, width: 'auto' }}
       />
@@ -39,8 +39,8 @@ export function KortixLogo({ size = 24, variant = 'symbol', className }: KortixL
   // Default symbol variant behavior
   return (
     <img
-      src="/kortix-symbol.svg"
-      alt="Kortix"
+      src="/omar-ai-symbol.svg"
+      alt="OMAR AI"
       className={cn(`${shouldInvert ? 'invert' : ''} flex-shrink-0`, className)}
       style={{ width: `${size}px`, height: `${size}px` }}
     />

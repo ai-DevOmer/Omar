@@ -1,4 +1,4 @@
-# Kortix Frontend
+# OMAR AI Frontend
 
 ## Quick Setup
 

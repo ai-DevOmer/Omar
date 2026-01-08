@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useImageContent, useFileContent } from '@/hooks/files';
 import { getToolIcon } from '@/components/thread/utils';
 import { AppIcon } from '@/components/thread/tool-views/shared/AppIcon';
@@ -246,7 +246,7 @@ export function MediaGenerationInline({
       >
         <AppIcon toolCall={toolCall} size={14} className="h-3.5 w-3.5 text-muted-foreground shrink-0" fallbackIcon={IconComponent} />
         <span className="font-mono text-xs text-foreground truncate">Generate Media</span>
-        {!isComplete && <KortixLoader size="small" className="ml-1" />}
+        {!isComplete && <OMAR AILoader size="small" className="ml-1" />}
       </button>
 
       {/* Media below - image or video */}

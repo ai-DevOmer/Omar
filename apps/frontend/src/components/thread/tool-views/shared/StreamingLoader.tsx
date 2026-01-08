@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, memo } from 'react';
 import Image from 'next/image';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 
 const streamingPhrases = [
   'Generating content',
@@ -16,7 +16,7 @@ const streamingPhrases = [
 interface StreamingLoaderProps {
   /** Optional custom message to display instead of cycling phrases */
   message?: string;
-  /** Whether to show the Kortix Computer branding */
+  /** Whether to show the OMAR AI Computer branding */
   showBranding?: boolean;
   /** Custom class name */
   className?: string;
@@ -75,8 +75,8 @@ export const StreamingLoader = memo(function StreamingLoader({
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-100/50 dark:to-zinc-900/50" />
             
-            {/* Kortix loader */}
-            <KortixLoader customSize={36} speed={1} />
+            {/* OMAR AI loader */}
+            <OMAR AILoader customSize={36} speed={1} />
           </div>
         </div>
 
@@ -84,16 +84,16 @@ export const StreamingLoader = memo(function StreamingLoader({
         {showBranding && (
           <div className="relative opacity-60">
             <Image
-              src="/kortix-computer-white.svg"
-              alt="Kortix Computer"
+              src="/omar-ai-computer-white.svg"
+              alt="OMAR AI Computer"
               width={140}
               height={16}
               className="hidden dark:block"
               priority
             />
             <Image
-              src="/kortix-computer-black.svg"
-              alt="Kortix Computer"
+              src="/omar-ai-computer-black.svg"
+              alt="OMAR AI Computer"
               width={140}
               height={16}
               className="block dark:hidden"

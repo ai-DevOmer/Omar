@@ -5,7 +5,7 @@ import { Icon } from '@/components/ui/icon';
 import { X } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
-import { useKortixComputerStore } from '@/stores/kortix-computer-store';
+import { useOMAR AIComputerStore } from '@/stores/omar-ai-computer-store';
 import { ViewToggle } from './ViewToggle';
 import { NavigationControls } from './NavigationControls';
 import { ToolsView } from './ToolsView';
@@ -16,7 +16,7 @@ import { extractToolCallAndResult } from '@/lib/utils/tool-data-extractor';
 import type { UnifiedMessage } from '@/api/types';
 import type { ToolMessagePair } from '@/components/chat';
 
-interface KortixComputerProps {
+interface OMAR AIComputerProps {
   toolMessages: ToolMessagePair[];
   currentIndex: number;
   onNavigate: (newIndex: number) => void;
@@ -40,7 +40,7 @@ interface KortixComputerProps {
   sandboxId?: string;
 }
 
-export function KortixComputer({
+export function OMAR AIComputer({
   toolMessages,
   currentIndex,
   onNavigate,
@@ -53,7 +53,7 @@ export function KortixComputer({
   onPromptFill,
   streamingText,
   sandboxId,
-}: KortixComputerProps) {
+}: OMAR AIComputerProps) {
   const insets = useSafeAreaInsets();
 
   const {
@@ -65,7 +65,7 @@ export function KortixComputer({
     closePanel,
     setActiveView,
     clearPendingToolNav,
-  } = useKortixComputerStore();
+  } = useOMAR AIComputerStore();
 
   const [internalIndex, setInternalIndex] = useState(currentIndex);
   const [navigationMode, setNavigationMode] = useState<'live' | 'manual'>('live');
@@ -169,7 +169,7 @@ export function KortixComputer({
         >
           <View className="flex-row items-center gap-3">
             <Text className="text-lg font-roobert-semibold text-primary">
-              Kortix Computer
+              OMAR AI Computer
             </Text>
           </View>
 

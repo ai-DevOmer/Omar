@@ -1,4 +1,4 @@
-# Kortix SDK
+# OMAR AI SDK
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://python.org)
 
@@ -7,37 +7,37 @@
 > 
 > The API is subject to breaking changes, features may be incomplete, and documentation may be outdated. Use at your own risk.
 
-A Python SDK that enables you to create, manage, and interact with AI Workers on [Kortix](https://www.kortix.com).
+A Python SDK that enables you to create, manage, and interact with AI Workers on [OMAR AI](https://www.omar-ai.com).
 
 ## 📦 Installation
 
 Install directly from the GitHub repository:
 
 ```bash
-pip install "kortix @ git+https://github.com/kortix-ai/suna.git@main#subdirectory=sdk"
+pip install "omar-ai @ git+https://github.com/omar-ai-ai/suna.git@main#subdirectory=sdk"
 ```
 
 Or using uv:
 
 ```bash
-uv add "kortix @ git+https://github.com/kortix-ai/suna.git@main#subdirectory=sdk"
+uv add "omar-ai @ git+https://github.com/omar-ai-ai/suna.git@main#subdirectory=sdk"
 ```
 
 ## 🔧 Quick Start
 
 ```python
 import asyncio
-from kortix import kortix
+from omar-ai import omar-ai
 
 async def main():
-    mcp_tools = kortix.MCPTools(
+    mcp_tools = omar-ai.MCPTools(
         "http://localhost:4000/mcp/",  # Point to any HTTP MCP server
-        "Kortix",
+        "OMAR AI",
     )
     await mcp_tools.initialize()
 
     # Initialize the client
-    client = kortix.Kortix(api_key="your-api-key")
+    client = omar-ai.OMAR AI(api_key="your-api-key")
 
     # Create an agent
     agent = await client.Agent.create(
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
 ## 🔑 Environment Setup
 
-Get your API key from [https://www.kortix.com/settings/api-keys](https://www.kortix.com/settings/api-keys)
+Get your API key from [https://www.omar-ai.com/settings/api-keys](https://www.omar-ai.com/settings/api-keys)
 
 ## 🧪 Running Examples
 

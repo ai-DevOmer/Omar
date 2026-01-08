@@ -14,7 +14,7 @@ import {
   XCircle,
   Plus,
 } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useCredentialProfilesForMcp } from '@/hooks/mcp/use-credential-profiles';
 
 interface ComposioCredentialProfileSelectorProps {
@@ -47,7 +47,7 @@ export const ComposioCredentialProfileSelector: React.FC<ComposioCredentialProfi
     return (
       <div className={className}>
         <div className="flex items-center gap-2">
-          <KortixLoader customSize={16} />
+          <OMAR AILoader customSize={16} />
           <span className="text-sm text-muted-foreground">Loading profiles...</span>
         </div>
       </div>

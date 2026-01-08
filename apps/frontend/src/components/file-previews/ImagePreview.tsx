@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { cn } from '@/lib/utils';
 import { getFilename, getFileIcon } from '@/lib/utils/file-utils';
 import { useFileData } from '@/hooks/use-file-data';
@@ -69,7 +69,7 @@ export function ImagePreview({
                 style={customStyle}
                 title="Loading file..."
             >
-                <KortixLoader size="medium" />
+                <OMAR AILoader size="medium" />
                 {retryCount > 0 && (
                     <div className="text-xs text-muted-foreground text-center px-2">
                         Loading... (attempt {retryCount + 1})
@@ -133,7 +133,7 @@ export function ImagePreview({
             {/* Upload progress overlay */}
             {(uploadStatus === 'uploading' || (uploadStatus === 'pending' && sandboxId)) && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-20">
-                    <KortixLoader size="small" variant="white" />
+                    <OMAR AILoader size="small" variant="white" />
                 </div>
             )}
             
@@ -147,7 +147,7 @@ export function ImagePreview({
             {/* Loading spinner overlay */}
             {!imageLoaded && isGridLayout && !uploadStatus && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 z-10">
-                    <KortixLoader size="small" />
+                    <OMAR AILoader size="small" />
                     {retryCount > 0 && (
                         <div className="text-xs text-muted-foreground bg-background/80 px-2 py-1 rounded">
                             Retrying... (attempt {retryCount + 1})

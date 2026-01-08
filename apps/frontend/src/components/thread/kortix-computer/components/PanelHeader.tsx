@@ -4,7 +4,7 @@ import { memo, useState, useEffect } from 'react';
 import { Minimize2, Wifi, BatteryLow, BatteryMedium, BatteryFull, BatteryCharging, Library, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DrawerTitle } from '@/components/ui/drawer';
-import { ViewType } from '@/stores/kortix-computer-store';
+import { ViewType } from '@/stores/omar-ai-computer-store';
 import { cn } from '@/lib/utils';
 import { ViewToggle } from './ViewToggle';
 import { ToolbarButtons } from './ToolbarButtons';
@@ -181,22 +181,22 @@ export const PanelHeader = memo(function PanelHeader({
       <div className="h-14 flex-shrink-0 px-4 flex items-center justify-between border-b border-border">
         <div className="flex items-center">
           <Image
-            src="/kortix-computer-white.svg"
-            alt="Kortix Computer"
+            src="/omar-ai-computer-white.svg"
+            alt="OMAR AI Computer"
             width={140}
             height={16}
             className="hidden dark:block"
             priority
           />
           <Image
-            src="/kortix-computer-black.svg"
-            alt="Kortix Computer"
+            src="/omar-ai-computer-black.svg"
+            alt="OMAR AI Computer"
             width={140}
             height={16}
             className="block dark:hidden"
             priority
           />
-          <DrawerTitle className="sr-only">Kortix Computer</DrawerTitle>
+          <DrawerTitle className="sr-only">OMAR AI Computer</DrawerTitle>
         </div>
         <div className="flex items-center gap-2">
           <ActionLibrarySwitcher 
@@ -236,16 +236,16 @@ export const PanelHeader = memo(function PanelHeader({
         className="flex items-center justify-center cursor-pointer select-none hover:opacity-80 transition-opacity"
       >
         <Image
-          src="/kortix-computer-white.svg"
-          alt="Kortix Computer"
+          src="/omar-ai-computer-white.svg"
+          alt="OMAR AI Computer"
           width={140}
           height={16}
           className="hidden dark:block"
           priority
         />
         <Image
-          src="/kortix-computer-black.svg"
-          alt="Kortix Computer"
+          src="/omar-ai-computer-black.svg"
+          alt="OMAR AI Computer"
           width={140}
           height={16}
           className="block dark:hidden"

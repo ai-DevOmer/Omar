@@ -1,5 +1,5 @@
-export { KortixComputer, type ToolCallInput } from './KortixComputer';
+export { OMAR AIComputer, type ToolCallInput } from './OMAR AIComputer';
 export { FileBrowserView } from './FileBrowserView';
 export { FileViewerView } from './FileViewerView';
-export { KortixComputerHeader } from './KortixComputerHeader';
+export { OMAR AIComputerHeader } from './OMAR AIComputerHeader';
 

@@ -1,6 +1,6 @@
 import { Icon } from '@/components/ui/icon';
 import { Text } from '@/components/ui/text';
-import { KortixLoader } from '@/components/ui';
+import { OMAR AILoader } from '@/components/ui';
 import { useLanguage } from '@/contexts';
 import * as React from 'react';
 import { Pressable, TextInput, View, Alert } from 'react-native';
@@ -281,7 +281,7 @@ export function ThreadHeader({
 
           {(isUpdating || isLoading) && (
             <View className="ml-2">
-              <KortixLoader size="large" />
+              <OMAR AILoader size="large" />
             </View>
           )}
         </View>

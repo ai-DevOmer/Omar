@@ -15,7 +15,7 @@ import {
 import { ChevronDown, Check, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useModelSelection } from '@/hooks/agents';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { OMAR AILogo } from '@/components/sidebar/omar-ai-logo';
 import { usePricingModalStore } from '@/stores/pricing-modal-store';
 
 export const ModeIndicator = memo(function ModeIndicator() {
@@ -27,12 +27,12 @@ export const ModeIndicator = memo(function ModeIndicator() {
   } = useModelSelection();
 
   const basicModel = useMemo(
-    () => modelOptions.find((m) => m.id === 'kortix/basic' || m.label === 'Kortix Basic'),
+    () => modelOptions.find((m) => m.id === 'omar-ai/basic' || m.label === 'OMAR AI Basic'),
     [modelOptions]
   );
   
   const powerModel = useMemo(
-    () => modelOptions.find((m) => m.id === 'kortix/power' || m.label === 'Kortix Advanced Mode'),
+    () => modelOptions.find((m) => m.id === 'omar-ai/power' || m.label === 'OMAR AI Advanced Mode'),
     [modelOptions]
   );
 
@@ -53,7 +53,7 @@ export const ModeIndicator = memo(function ModeIndicator() {
       } else {
         usePricingModalStore.getState().openPricingModal({
           isAlert: true,
-          alertTitle: 'Upgrade to access Kortix Advanced mode',
+          alertTitle: 'Upgrade to access OMAR AI Advanced mode',
         });
       }
     }
@@ -71,7 +71,7 @@ export const ModeIndicator = memo(function ModeIndicator() {
               variant="outline"
               className="h-10 px-3 bg-transparent border-[1.5px] border-border rounded-2xl cursor-pointer gap-1.5 text-muted-foreground hover:text-foreground hover:bg-accent/50"
             >
-              {isPowerSelected && <KortixLogo size={12} variant="symbol" />}
+              {isPowerSelected && <OMAR AILogo size={12} variant="symbol" />}
               <span className="text-sm font-medium">{currentModeLabel}</span>
               {!canAccessPower && !isPowerSelected && (
                 <Lock className="h-3.5 w-3.5 text-muted-foreground" strokeWidth={2} />
@@ -111,7 +111,7 @@ export const ModeIndicator = memo(function ModeIndicator() {
           onClick={handleAdvancedClick}
         >
           <div className="flex items-center gap-1.5">
-            <KortixLogo size={12} variant="symbol" />
+            <OMAR AILogo size={12} variant="symbol" />
             <span
               className={cn(
                 'font-medium',

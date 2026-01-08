@@ -257,7 +257,7 @@ export function useThreadData(
 
         // "Initial load" should mean we can render the thread UI (messages + thread metadata).
         // Agent runs are *nice to have* (they can be slow/404 transiently when infra changes),
-        // but they should never block the UI from becoming interactive (e.g. opening Kortix Computer).
+        // but they should never block the UI from becoming interactive (e.g. opening OMAR AI Computer).
         const requiredDataLoaded = Boolean(threadQuery.data && messagesQuery.data);
           
         if (requiredDataLoaded) {

@@ -245,7 +245,7 @@ export function SiteHeader({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>{isSidePanelOpen ? 'Close' : 'Open'} Kortix Computer (CMD+I)</p>
+              <p>{isSidePanelOpen ? 'Close' : 'Open'} OMAR AI Computer (CMD+I)</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { KortixProcessModal } from '@/components/sidebar/kortix-enterprise-modal';
+import { OMAR AIProcessModal } from '@/components/sidebar/omar-ai-enterprise-modal';
 
 export function CTACard() {
   return (
@@ -15,11 +15,11 @@ export function CTACard() {
         </div>
 
         <div>
-          <KortixProcessModal>
+          <OMAR AIProcessModal>
             <Button className="w-full">
               Learn more
             </Button>
-          </KortixProcessModal>
+          </OMAR AIProcessModal>
         </div>
 
       </div>

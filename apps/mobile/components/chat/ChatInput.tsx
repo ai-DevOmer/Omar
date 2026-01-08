@@ -1,6 +1,6 @@
 import { Icon } from '@/components/ui/icon';
 import { Text } from '@/components/ui/text';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useLanguage } from '@/contexts';
 import { AudioLines, CornerDownLeft, Paperclip, X } from 'lucide-react-native';
 import { StopIcon } from '@/components/ui/StopIcon';
@@ -637,7 +637,7 @@ const NormalMode = React.memo(({
           activeOpacity={0.7}
         >
           {isSendingMessage || isTranscribing ? (
-            <KortixLoader size="small" customSize={16} forceTheme="dark" />
+            <OMAR AILoader size="small" customSize={16} forceTheme="dark" />
           ) : (
             ButtonIcon === StopIcon ? (
               <StopIcon size={buttonIconSize} className={buttonIconClass} />

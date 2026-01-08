@@ -40,7 +40,7 @@ import {
   MessageSquare,
   ExternalLink,
 } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useAdminUserDetails, useAdminUserThreads, useAdminUserActivity } from '@/hooks/admin/use-admin-users';
 import {
   useUserBillingSummary,
@@ -616,7 +616,7 @@ export function AdminUserDetailsDialog({
                       >
                         {processRefundMutation.isPending ? (
                           <>
-                            <KortixLoader size="small" className="mr-2" />
+                            <OMAR AILoader size="small" className="mr-2" />
                             Processing...
                           </>
                         ) : (

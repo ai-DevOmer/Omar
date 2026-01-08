@@ -1,11 +1,11 @@
 {
-  "name": "kortix-desktop",
+  "name": "omar-ai-desktop",
   "version": "1.0.0",
-  "description": "Kortix Desktop",
+  "description": "OMAR AI Desktop",
   "author": {
-    "name": "Kortix",
-    "email": "support@kortix.com",
-    "url": "https://kortix.com"
+    "name": "OMAR AI",
+    "email": "support@omar-ai.com",
+    "url": "https://omar-ai.com"
   },
   "main": "main.js",
   "scripts": {
@@ -24,11 +24,11 @@
     "electron-builder": "^25.1.8"
   },
   "build": {
-    "appId": "com.kortix.desktop",
-    "productName": "Kortix",
+    "appId": "com.omar-ai.desktop",
+    "productName": "OMAR AI",
     "protocols": {
-      "name": "Kortix",
-      "schemes": ["kortix"]
+      "name": "OMAR AI",
+      "schemes": ["omar-ai"]
     },
     "mac": {
       "target": "dmg",

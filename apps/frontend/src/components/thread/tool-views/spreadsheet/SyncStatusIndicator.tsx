@@ -1,5 +1,5 @@
 import { Cloud, CloudOff, Check, AlertCircle, RefreshCw } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -48,7 +48,7 @@ export function SyncStatusIndicator({
     switch (status) {
       case 'syncing':
         return {
-          icon: <KortixLoader customSize={14} />,
+          icon: <OMAR AILoader customSize={14} />,
           label: 'Saving...',
           ...grayStyle,
         };

@@ -9,7 +9,7 @@ import { NavAgentsView } from '@/components/sidebar/nav-agents-view';
 import { NavGlobalConfig } from '@/components/sidebar/nav-global-config';
 import { NavTriggerRuns } from '@/components/sidebar/nav-trigger-runs';
 import { NavUserWithTeams } from '@/components/sidebar/nav-user-with-teams';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { OMAR AILogo } from '@/components/sidebar/omar-ai-logo';
 import { siteConfig } from '@/lib/site-config';
 import {
   Sidebar,
@@ -291,7 +291,7 @@ export function SidebarLeft({
           {/* Logo - stays visually centered when collapsed, left-aligned when expanded */}
           <div className="relative flex items-center justify-center group/logo">
             <Link href="/dashboard" onClick={() => isMobile && setOpenMobile(false)} className="flex items-center justify-center">
-              <KortixLogo 
+              <OMAR AILogo 
                 size={20} 
                 className={cn(
                   "flex-shrink-0 transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] hover:rotate-180 hover:duration-700",
@@ -502,11 +502,11 @@ export function SidebarLeft({
               <p className="text-xs text-muted-foreground mb-4">
                 Request custom AI Workers implementation
               </p>
-              <KortixProcessModal>
+              <OMAR AIProcessModal>
                 <Button size="sm" className="w-full text-xs h-8">
                   Learn More
                 </Button>
-              </KortixProcessModal>
+              </OMAR AIProcessModal>
             </div>
           </div>
         )

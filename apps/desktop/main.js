@@ -2,10 +2,10 @@ const { app, BrowserWindow, clipboard, nativeImage, Menu } = require('electron')
 const path = require('path');
 
 // Custom protocol scheme for deep linking
-const PROTOCOL_SCHEME = 'kortix';
+const PROTOCOL_SCHEME = 'omar-ai';
 
 // Get URL from environment variable or default to production
-const APP_URL = process.env.APP_URL || 'https://kortix.com/';
+const APP_URL = process.env.APP_URL || 'https://omar-ai.com/';
 
 // Simple dev check without ES module dependency
 const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
@@ -28,10 +28,10 @@ const isLocal = isLocalhost(normalizedUrl);
 
 // Set app name for macOS menu bar
 if (process.platform === 'darwin') {
-  app.setName('Kortix');
+  app.setName('OMAR AI');
 }
 
-// Register as default protocol handler for kortix://
+// Register as default protocol handler for omar-ai://
 // This allows magic links to open in the desktop app
 if (process.defaultApp) {
   // Development mode - register with path to electron executable
@@ -54,7 +54,7 @@ function handleDeepLink(url) {
     return;
   }
   
-  // Convert kortix://auth/callback?code=xxx to https://kortix.com/auth/callback?code=xxx
+  // Convert omar-ai://auth/callback?code=xxx to https://omar-ai.com/auth/callback?code=xxx
   const deepLinkPath = url.replace(`${PROTOCOL_SCHEME}://`, '');
   const webUrl = normalizedUrl.endsWith('/') 
     ? normalizedUrl + deepLinkPath 
@@ -122,7 +122,7 @@ const loadingHTML = `
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Kortix</title>
+  <title>OMAR AI</title>
   <style>
     * {
       margin: 0;
@@ -211,12 +211,12 @@ function createWindow() {
   });
 
   // Set custom user agent to identify Electron app
-  webContents.setUserAgent(webContents.getUserAgent() + ' Electron/Kortix-Desktop');
+  webContents.setUserAgent(webContents.getUserAgent() + ' Electron/OMAR AI-Desktop');
 
   // Create menu with back/forward navigation
   const template = [
     ...(process.platform === 'darwin' ? [{
-      label: 'Kortix',
+      label: 'OMAR AI',
       submenu: [
         { role: 'about' },
         { type: 'separator' },

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, memo, useMemo } from "react";
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useTranslations } from "next-intl";
 import {
   UnifiedMessage,
@@ -14,7 +14,7 @@ import {
   safeJsonParse,
   HIDE_STREAMING_XML_TAGS,
 } from "@/components/thread/utils";
-import { KortixLogo } from "@/components/sidebar/kortix-logo";
+import { OMAR AILogo } from "@/components/sidebar/omar-ai-logo";
 import { AgentLoader } from "./loader";
 import { ShowToolStream } from "./ShowToolStream";
 import { ComposioUrlDetector } from "./composio-url-detector";
@@ -61,13 +61,13 @@ interface AgentInfo {
   avatar: React.ReactNode;
 }
 
-// Reusable agent header - shows Kortix logo for Kortix, avatar+name for others
+// Reusable agent header - shows OMAR AI logo for OMAR AI, avatar+name for others
 const AgentHeader = memo(function AgentHeader({ agentInfo }: { agentInfo: AgentInfo }) {
-  if (agentInfo.name === "Kortix") {
+  if (agentInfo.name === "OMAR AI") {
     return (
       <img
-        src="/kortix-logomark-white.svg"
-        alt="Kortix"
+        src="/omar-ai-logomark-white.svg"
+        alt="OMAR AI"
         className="dark:invert-0 invert flex-shrink-0"
         style={{ height: '12px', width: 'auto' }}
       />
@@ -689,7 +689,7 @@ const AssistantGroupRow = memo(function AssistantGroupRow({
               }
               className="inline-flex items-center gap-1.5 h-8 px-2 py-1.5 text-xs text-muted-foreground bg-card hover:bg-card/80 rounded-lg transition-colors cursor-pointer border border-neutral-200 dark:border-neutral-700/50 max-w-full"
             >
-              <KortixLoader size="small" />
+              <OMAR AILoader size="small" />
               <span className="font-mono text-xs text-foreground truncate">
                 Using Tool
               </span>
@@ -842,8 +842,8 @@ export const ThreadContent: React.FC<ThreadContentProps> = memo(
     sandboxId,
     project,
     isPreviewMode = false,
-    agentName = "Kortix",
-    agentAvatar = <KortixLogo size={14} />,
+    agentName = "OMAR AI",
+    agentAvatar = <OMAR AILogo size={14} />,
     emptyStateComponent,
     threadMetadata,
     scrollContainerRef,
@@ -892,19 +892,19 @@ export const ThreadContent: React.FC<ThreadContentProps> = memo(
       if (recentAssistantWithAgent?.agents?.name) {
         const rawName = recentAssistantWithAgent.agents.name;
         const name =
-          typeof rawName === "string" ? rawName : String(rawName || "Kortix");
+          typeof rawName === "string" ? rawName : String(rawName || "OMAR AI");
         return {
           name,
           avatar: (
             <div className="h-5 w-5 flex items-center justify-center rounded text-xs">
-              <KortixLogo size={14} />
+              <OMAR AILogo size={14} />
             </div>
           ),
         };
       }
-      const fallbackName = typeof agentName === "string" ? agentName : "Kortix";
+      const fallbackName = typeof agentName === "string" ? agentName : "OMAR AI";
       return {
-        name: fallbackName || "Kortix",
+        name: fallbackName || "OMAR AI",
         avatar: agentAvatar,
       };
     }, [threadMetadata, displayMessages, agentName, agentAvatar]);
@@ -1256,7 +1256,7 @@ export const ThreadContent: React.FC<ThreadContentProps> = memo(
                     <span className="font-mono text-xs text-primary">
                       {currentToolCall.name || "Using Tool"}
                     </span>
-                    <KortixLoader size="small" className="ml-auto" />
+                    <OMAR AILoader size="small" className="ml-auto" />
                   </div>
                 </div>
               </div>

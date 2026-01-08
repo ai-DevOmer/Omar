@@ -261,7 +261,7 @@ async def make_llm_api_call(
     if is_openrouter_model:
         if "extra_body" not in params:
             params["extra_body"] = {}
-        params["extra_body"]["app"] = "Kortix.com"
+        params["extra_body"]["app"] = "OMAR AI.com"
         logger.debug(f"[LLM] OpenRouter app param added for {actual_litellm_model_id}")
     
     if tools:

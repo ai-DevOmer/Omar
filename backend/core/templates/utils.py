@@ -125,7 +125,7 @@ def format_template_for_response(template: AgentTemplate) -> Dict[str, Any]:
         'tags': template.tags,
         'categories': template.categories,
         'is_public': template.is_public,
-        'is_kortix_team': template.is_kortix_team,
+        'is_omar-ai_team': template.is_omar-ai_team,
         'marketplace_published_at': template.marketplace_published_at.isoformat() if template.marketplace_published_at else None,
         'download_count': template.download_count,
         'created_at': template.created_at.isoformat(),

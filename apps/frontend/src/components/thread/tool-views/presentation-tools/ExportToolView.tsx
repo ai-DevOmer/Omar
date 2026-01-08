@@ -7,7 +7,7 @@ import {
   AlertTriangle,
   LucideIcon,
 } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { ToolViewProps } from '../types';
 import { formatTimestamp } from '../utils';
 import { downloadPresentation, DownloadFormat } from '../utils/presentation-utils';
@@ -218,7 +218,7 @@ export function ExportToolView({
       >
         <div className="w-9 h-9 rounded-md bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
           {isLoading ? (
-            <KortixLoader customSize={16} />
+            <OMAR AILoader customSize={16} />
           ) : (
             <Icon className="h-4 w-4 text-foreground" />
           )}
@@ -244,14 +244,14 @@ export function ExportToolView({
           <div className="flex flex-row items-center justify-between">
             <ToolViewIconTitle icon={Presentation} title={presentationName || 'Export Presentation'} />
             <Badge className="h-6 bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border-0">
-              <KortixLoader customSize={12} className="mr-1" />
+              <OMAR AILoader customSize={12} className="mr-1" />
               Exporting
             </Badge>
           </div>
         </CardHeader>
         <CardContent className="p-6">
           <div className="flex items-center justify-center gap-3 py-4">
-            <KortixLoader customSize={20} />
+            <OMAR AILoader customSize={20} />
             <span className="text-sm text-muted-foreground">
               {presentationName || 'Processing...'}
             </span>

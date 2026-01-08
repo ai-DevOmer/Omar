@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { View, ScrollView, TextInput, Pressable, Alert, Share, Modal, FlatList, Platform } from 'react-native';
 import { Text } from '@/components/ui/text';
 import { Icon } from '@/components/ui/icon';
-import { KortixLoader } from '@/components/ui';
+import { OMAR AILoader } from '@/components/ui';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
   Home,
@@ -41,9 +41,9 @@ import {
   type FileVersion,
   type CommitInfo,
 } from '@/lib/files/hooks';
-import { useKortixComputerStore } from '@/stores/kortix-computer-store';
+import { useOMAR AIComputerStore } from '@/stores/omar-ai-computer-store';
 import { API_URL, getAuthToken } from '@/api/config';
-import { KortixComputerHeader } from './KortixComputerHeader';
+import { OMAR AIComputerHeader } from './OMAR AIComputerHeader';
 import { VersionBanner } from './VersionBanner';
 
 interface FileViewerViewProps {
@@ -83,7 +83,7 @@ export function FileViewerView({
     selectedVersionDate,
     setSelectedVersion,
     clearSelectedVersion,
-  } = useKortixComputerStore();
+  } = useOMAR AIComputerStore();
 
   const [blobUrl, setBlobUrl] = useState<string | undefined>();
   const [versionBlobUrl, setVersionBlobUrl] = useState<string | undefined>();
@@ -493,7 +493,7 @@ export function FileViewerView({
   return (
     <View className="flex-1">
       {/* Header */}
-      <KortixComputerHeader
+      <OMAR AIComputerHeader
         icon={Home}
         onIconClick={goBackToBrowser}
         iconTitle="Back to files"
@@ -559,7 +559,7 @@ export function FileViewerView({
                       className={`h-9 w-9 items-center justify-center rounded-xl bg-card border border-border active:opacity-70 ${!hasUnsavedChanges ? 'opacity-50' : ''}`}
                     >
                       {saveStatus === 'saving' ? (
-                        <KortixLoader size="small" customSize={17} />
+                        <OMAR AILoader size="small" customSize={17} />
                       ) : (
                         <Icon
                           as={saveStatus === 'saved' ? Check : saveStatus === 'error' ? AlertCircle : Save}
@@ -636,7 +636,7 @@ export function FileViewerView({
       <View className="flex-1">
         {isLoading ? (
           <View className="flex-1 items-center justify-center">
-            <KortixLoader size="large" />
+            <OMAR AILoader size="large" />
             <Text className="text-sm text-primary opacity-50 mt-4">
               {isLoadingVersionContent ? 'Loading version...' : `Loading ${fileName}...`}
             </Text>
@@ -753,7 +753,7 @@ export function FileViewerView({
 
           {isLoadingVersions ? (
             <View className="flex-1 items-center justify-center">
-              <KortixLoader size="large" />
+              <OMAR AILoader size="large" />
               <Text className="text-sm text-primary opacity-50 mt-4">Loading history...</Text>
             </View>
           ) : versions.length === 0 ? (
@@ -797,7 +797,7 @@ export function FileViewerView({
 
             {isLoadingRevertInfo ? (
               <View className="py-8 items-center">
-                <KortixLoader size="small" />
+                <OMAR AILoader size="small" />
               </View>
             ) : revertCommitInfo ? (
               <View className="mb-4">
@@ -870,7 +870,7 @@ export function FileViewerView({
               >
                 {isReverting ? (
                   <View className="flex-row items-center gap-2">
-                    <KortixLoader size="small" customSize={14} forceTheme="dark" />
+                    <OMAR AILoader size="small" customSize={14} forceTheme="dark" />
                     <Text className="text-sm font-roobert-medium text-background">Restoring...</Text>
                   </View>
                 ) : (

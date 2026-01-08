@@ -41,12 +41,12 @@ import { AgentIdentifier } from '@/components/agents';
 import { FileAttachmentsGrid } from './FileAttachmentRenderer';
 import { AgentLoader } from './AgentLoader';
 import { CheckCircle2, AlertCircle, Info, CircleDashed } from 'lucide-react-native';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { StreamingToolCard } from './StreamingToolCard';
 import { TaskCompletedFeedback } from './tool-views/complete-tool/TaskCompletedFeedback';
 import { renderAssistantMessage } from './assistant-message-renderer';
 import { PromptExamples } from '@/components/shared';
-import { useKortixComputerStore } from '@/stores/kortix-computer-store';
+import { useOMAR AIComputerStore } from '@/stores/omar-ai-computer-store';
 
 export interface ToolMessagePair {
   assistantMessage: UnifiedMessage | null;
@@ -226,7 +226,7 @@ const MarkdownContent = React.memo(function MarkdownContent({
               <View className="flex-row items-start gap-2.5 rounded-xl border border-border bg-muted/40 px-3 py-2.5 dark:bg-muted/20">
                 <Icon as={Info} size={16} className="mt-0.5 flex-shrink-0 text-muted-foreground" />
                 <Text className="flex-1 font-roobert text-sm leading-relaxed text-muted-foreground">
-                  Kortix will automatically continue working once you provide your response.
+                  OMAR AI will automatically continue working once you provide your response.
                 </Text>
               </View>
 
@@ -426,7 +426,7 @@ const ToolCard = React.memo(function ToolCard({
         disabled={!onPress}
         className="flex-row items-center gap-3 rounded-3xl border border-border bg-card p-3">
         <View className="h-8 w-8 items-center justify-center rounded-xl border border-border bg-background">
-          <KortixLoader size="small" />
+          <OMAR AILoader size="small" />
         </View>
         <View className="flex-1">
           <Text className="mb-0.5 font-roobert-medium text-sm text-foreground">{displayName}</Text>
@@ -570,7 +570,7 @@ const StreamingToolCallIndicator = React.memo(function StreamingToolCallIndicato
           {isCompleted ? (
             <Icon as={CheckCircle2} size={16} className="text-emerald-500" />
           ) : (
-            <KortixLoader size="small" />
+            <OMAR AILoader size="small" />
           )}
         </View>
         
@@ -621,7 +621,7 @@ const StreamingToolCallIndicator = React.memo(function StreamingToolCallIndicato
       {isCompleted ? (
         <Icon as={CheckCircle2} size={16} className="text-emerald-500" />
       ) : (
-        <KortixLoader size="small" />
+        <OMAR AILoader size="small" />
       )}
     </View>
   );
@@ -673,7 +673,7 @@ export const ThreadContent: React.FC<ThreadContentProps> = React.memo(
     streamHookStatus = 'idle',
     sandboxId,
     sandboxUrl,
-    agentName = 'Kortix',
+    agentName = 'OMAR AI',
     onPromptFill,
   }) => {
     const { colorScheme } = useColorScheme();
@@ -787,7 +787,7 @@ export const ThreadContent: React.FC<ThreadContentProps> = React.memo(
       return maps;
     }, [groupedMessages]);
 
-    const { navigateToToolCall } = useKortixComputerStore();
+    const { navigateToToolCall } = useOMAR AIComputerStore();
 
     const handleToolPressInternal = useCallback(
       (clickedToolMsg: UnifiedMessage) => {

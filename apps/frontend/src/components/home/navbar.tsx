@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useAuth } from '@/components/AuthProvider';
 import { useRouter, usePathname } from 'next/navigation';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { OMAR AILogo } from '@/components/sidebar/omar-ai-logo';
 import { useTranslations } from 'next-intl';
 import { trackCtaSignup } from '@/lib/analytics/gtm';
 
@@ -122,7 +122,7 @@ export function Navbar() {
             {/* Left Section - Logo */}
             <div className="flex items-center justify-start flex-shrink-0">
               <Link href="/" className="flex items-center gap-3">
-                <KortixLogo size={18} variant='logomark' />
+                <OMAR AILogo size={18} variant='logomark' />
               </Link>
             </div>
 
@@ -192,7 +192,7 @@ export function Navbar() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-3" onClick={() => setIsDrawerOpen(false)}>
-                    <KortixLogo size={20} variant='logomark' />
+                    <OMAR AILogo size={20} variant='logomark' />
                   </Link>
                   <button
                     onClick={toggleDrawer}

@@ -3,7 +3,7 @@
 import React, { forwardRef, useEffect, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Paperclip } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { toast } from '@/lib/toast';
 import { createClient } from '@/lib/supabase/client';
 import { useQueryClient } from '@tanstack/react-query';
@@ -561,7 +561,7 @@ export const FileUploadHandler = memo(forwardRef<
                 }
               >
                 {isUploading ? (
-                  <KortixLoader size="small" />
+                  <OMAR AILoader size="small" />
                 ) : (
                   <Paperclip className="h-4 w-4" strokeWidth={2} />
                 )}

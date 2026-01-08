@@ -26,9 +26,9 @@
         "autoIncrement": true
       },
       "env": {
-        "EXPO_PUBLIC_SUPABASE_URL": "https://supa.kortix.com",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://supa.omar-ai.com",
         "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impicml3YXNzZWJ4ZHdvaWVpa2dhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQzOTMzMjYsImV4cCI6MjA1OTk2OTMyNn0.1iYSZAYGOc0B0-64KzLKwMA3dYNn0enQteikh9_VnDc",
-        "EXPO_PUBLIC_BACKEND_URL": "https://api.kortix.com/v1",
+        "EXPO_PUBLIC_BACKEND_URL": "https://api.omar-ai.com/v1",
         "EXPO_PUBLIC_USE_REVENUECAT": "true",
         "EXPO_PUBLIC_REVENUECAT_IOS_API_KEY": "appl_UpcFYduOZYUgSqKPNvtzgXkPCeh",
         "EXPO_PUBLIC_REVENUECAT_ANDROID_API_KEY": "goog_wckzzdVDdOjbVHemqCsuFckMrMQ"

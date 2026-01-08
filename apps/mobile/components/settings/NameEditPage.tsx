@@ -13,7 +13,7 @@ import { Save, Mail, AlertTriangle } from 'lucide-react-native';
 import { SettingsHeader } from './SettingsHeader';
 import { supabase } from '@/api/supabase';
 import * as Haptics from 'expo-haptics';
-import { KortixLoader } from '@/components/ui';
+import { OMAR AILoader } from '@/components/ui';
 import { ProfilePicture } from './ProfilePicture';
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
@@ -287,7 +287,7 @@ function SaveButton({ onPress, disabled, isLoading, hasChanges }: SaveButtonProp
     >
       {isLoading ? (
         <>
-          <KortixLoader 
+          <OMAR AILoader 
             size="small" 
             forceTheme={colorScheme === 'dark' ? 'dark' : 'light'}
           />

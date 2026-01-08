@@ -8,7 +8,7 @@ import { createPortal } from 'react-dom';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ApiMessageType } from '@/components/thread/types';
 import { Globe, CircleDashed } from 'lucide-react';
-import { KortixLoader } from '@/components/ui/kortix-loader';
+import { OMAR AILoader } from '@/components/ui/omar-ai-loader';
 import { useIsMobile } from '@/hooks/utils';
 import { ToolView } from '../tool-views/wrapper';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,10 +18,10 @@ import { useTranslations } from 'next-intl';
 import { Drawer, DrawerContent } from '@/components/ui/drawer';
 import { useDocumentModalStore } from '@/stores/use-document-modal-store';
 import { 
-  useKortixComputerStore,
-  useKortixComputerPendingToolNavIndex,
-  useKortixComputerClearPendingToolNav,
-} from '@/stores/kortix-computer-store';
+  useOMAR AIComputerStore,
+  useOMAR AIComputerPendingToolNavIndex,
+  useOMAR AIComputerClearPendingToolNav,
+} from '@/stores/omar-ai-computer-store';
 import { FileBrowserView } from './FileBrowserView';
 import { FileViewerView } from './FileViewerView';
 import { ToolCallData, ToolResultData } from '../tool-views/types';
@@ -44,7 +44,7 @@ export interface ToolCallInput {
   messages?: ApiMessageType[];
 }
 
-interface KortixComputerProps {
+interface OMAR AIComputerProps {
   isOpen: boolean;
   onClose: () => void;
   toolCalls: ToolCallInput[];
@@ -82,9 +82,9 @@ interface ToolCallSnapshot {
 
 type NavigationMode = 'live' | 'manual';
 
-const FLOATING_LAYOUT_ID = 'kortix-computer-float';
+const FLOATING_LAYOUT_ID = 'omar-ai-computer-float';
 
-export const KortixComputer = memo(function KortixComputer({
+export const OMAR AIComputer = memo(function OMAR AIComputer({
   isOpen,
   onClose,
   toolCalls,
@@ -103,7 +103,7 @@ export const KortixComputer = memo(function KortixComputer({
   sandboxId,
   projectId,
   sidePanelRef,
-}: KortixComputerProps) {
+}: OMAR AIComputerProps) {
   const t = useTranslations('thread');
   const [dots, setDots] = useState('');
   const [internalIndex, setInternalIndex] = useState(0);
@@ -127,10 +127,10 @@ export const KortixComputer = memo(function KortixComputer({
     currentPath,
     navigateToPath,
     openFile,
-  } = useKortixComputerStore();
+  } = useOMAR AIComputerStore();
   
-  const pendingToolNavIndex = useKortixComputerPendingToolNavIndex();
-  const clearPendingToolNav = useKortixComputerClearPendingToolNav();
+  const pendingToolNavIndex = useOMAR AIComputerPendingToolNavIndex();
+  const clearPendingToolNav = useOMAR AIComputerClearPendingToolNav();
 
   const effectiveSandboxIdForQuery = sandboxId || project?.sandbox?.id || '';
   const { data: enhancedBrowserFiles = [] } = useDirectoryQuery(
@@ -548,7 +548,7 @@ export const KortixComputer = memo(function KortixComputer({
             <div className="flex flex-col items-center space-y-4 max-w-sm text-center">
               <div className="relative">
                 <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center">
-                  <KortixLoader size="medium" />
+                  <OMAR AILoader size="medium" />
                 </div>
               </div>
               <div className="space-y-2">
@@ -748,7 +748,7 @@ export const KortixComputer = memo(function KortixComputer({
   if (isMobile) {
     const handleDrawerKeyDown = (e: React.KeyboardEvent) => {
       // Vaul drawers are dismissible by Escape by default.
-      // Prevent Escape / Esc from closing the Kortix Computer.
+      // Prevent Escape / Esc from closing the OMAR AI Computer.
       if (e.key === 'Escape' || e.key === 'Esc') {
         e.preventDefault();
         e.stopPropagation();
@@ -759,7 +759,7 @@ export const KortixComputer = memo(function KortixComputer({
       <Drawer
         open={isOpen}
         onOpenChange={(open) => !open && handleClose()}
-        // Never allow Esc/Escape to dismiss the Kortix Computer.
+        // Never allow Esc/Escape to dismiss the OMAR AI Computer.
         // (Users commonly hit Escape in editors / sandbox UIs.)
         dismissible={false}
       >
@@ -974,7 +974,7 @@ export const KortixComputer = memo(function KortixComputer({
   return (
     <motion.div
       key="sidepanel-resizable"
-      layoutId="kortix-computer-window"
+      layoutId="omar-ai-computer-window"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={{
